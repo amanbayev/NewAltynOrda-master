@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/relativeAddProperty"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="kz.growit.altynorda.AddPropertyActivity">
+
+
+    <com.rey.material.widget.ProgressView
+        android:id="@+id/progressAddProperty"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        app:cpd_strokeColor="#338599"
+        app:pv_autostart="false"
+        app:pv_circular="true"
+        app:pv_progressMode="indeterminate"
+        app:pv_progressStyle="@style/Material.Drawable.CircularProgress" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.kz.growit.newaltynorda.AddPropertyActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Добавление недвижимости"
+                android:textSize="24dp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/basicInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Основная информация" />
+
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/Title"
+
+                    style="@style/Material.Widget.EditText.Light"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Заглавие"
+                    android:textSize="20dp"
+                    android:inputType="textCapWords"
+                    android:maxLength="5"
+                    android:singleLine="true"
+                    app:et_error="error"
+                    app:et_helper="helper"
+                    app:et_supportMaxChars="4"
+                    app:et_supportMode="charCounter" />
+
+                <EditText
+                    android:id="@+id/Price"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Цена"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/Address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Адрес"
+                    android:inputType="textCapWords"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/Description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Описание"
+                    android:inputType="textMultiLine"
+                    android:singleLine="true" />
+
+
+                <EditText
+                    android:id="@+id/ConstructionYear"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Год постройки"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+
+                <EditText
+                    android:id="@+id/RoomCount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Количество комнат"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/CeilingHeight"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Высота потолка"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+
+                <EditText
+                    android:id="@+id/Floor"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Этаж"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/TotalFloors"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Макс Этаж"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/TotalArea"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Площадь"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/KitchenArea"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Площадь кухни"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+
+                <EditText
+                    android:id="@+id/CityId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="CityId  1"
+
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+
+                <EditText
+                    android:id="@+id/PropertyTypeId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PropertyTypeId 2 квартира"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+
+                <EditText
+                    android:id="@+id/ListingStatusId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ListingStatusId 2 продажа"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/ExchangeId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Валюта"
+                    android:inputType="number"
+                    android:maxLength="255"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Расположение" />
+
+                <!--<com.rey.material.widget.Spinner-->
+                <!--android:id="@+id/spinnerCity"-->
+                <!--style="@style/Material.Widget.Spinner"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--app:rd_style="@style/Material.Drawable.Ripple.Wave" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/typeProperty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:text="Тип недвижимости" />
+
+                        <!--<com.rey.material.widget.Spinner-->
+                        <!--android:id="@+id/spinnerTypeProperty"-->
+                        <!--style="@style/Material.Widget.Spinner"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+
+                        <!--app:rd_style="@style/Material.Drawable.Ripple.Wave" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/propertyStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:text="Статус" />
+
+                        <!--<com.rey.material.widget.Spinner-->
+                        <!--android:id="@+id/spinnerPropertyStatus"-->
+                        <!--style="@style/Material.Widget.Spinner"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--app:rd_style="@style/Material.Drawable.Ripple.Wave" />-->
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/propertyYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Год постройки" />
+
+                        <EditText
+                            android:id="@+id/editPropertyYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/propertyCeilingHeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Высота потолка" />
+
+                        <EditText
+                            android:id="@+id/editPropertyCeilingHeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Год постройки" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Высота потолка" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Год постройки" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Высота потолка" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Год постройки" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Высота потолка" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:inputType="textCapWords"
+                            android:maxLength="255"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.Button
+                        android:id="@+id/SendProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Сохранить"
+                        app:rd_enable="true" />
+
+                    <com.rey.material.widget.Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Добавить обложку"
+                        app:rd_enable="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

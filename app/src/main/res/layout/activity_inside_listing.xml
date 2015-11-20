@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/activityInsideRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <com.rey.material.widget.ProgressView
+        android:id="@+id/progressInsideListingView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        app:cpd_strokeColor="#338599"
+        app:pv_autostart="false"
+        app:pv_circular="true"
+        app:pv_progressMode="indeterminate"
+        app:pv_progressStyle="@style/Material.Drawable.CircularProgress" />
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relSendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:paddingLeft="10dp">
+
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/sendComment"
+            android:layout_alignTop="@+id/sendComment"
+            android:layout_marginBottom="-4dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/sendComment"
+            android:background="@android:color/white"
+            android:hint="Ваш комментарий"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <com.rey.material.widget.Button
+            android:id="@+id/sendComment"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:background="@color/primary"
+            android:text="Отпр."
+            android:textColor="#fff"
+            app:rd_enable="true"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+        <!--android:background="@drawable/button_send"-->
+    </RelativeLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabResultsCall"
+        android:layout_width="wrap_content"
+
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:backgroundTint="@color/colorAccent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        app:layout_behavior=".ScrollAwareFABBehavior"
+        android:layout_above="@id/relSendMessage"
+        android:src="@android:drawable/ic_menu_call" />
+
+</RelativeLayout>
