@@ -35,6 +35,7 @@ import kz.growit.altynorda.models.Cities;
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private MaterialDialog.Builder builder;
+    public FloatingActionButton fab;
     private Boolean isLoggedIn = false;
 
 
@@ -108,7 +109,26 @@ public class MainActivity extends AppCompatActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                if (!isLoggedIn) {
+
+                    MaterialDialog dialog = builder.build();
+                    dialog.show();
+                } else {
+
+                    view.getContext().startActivity(new Intent(MainActivity.this, AddPropertyActivity.class));
+
+                }
+//                    Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+
+//            }
+
+            }
+        });
         // Get the ViewPager and set it's PagerAdapter so that it can display items
         viewPager = (ViewPager) findViewById(R.id.viewpagerOneCard);
         viewPager.setAdapter(new ListingsPagerAdapter(getSupportFragmentManager(),
@@ -120,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) fab.setVisibility(View.VISIBLE);
+                else
+                    fab.setVisibility(View.GONE);
                 viewPager.setCurrentItem(tab.getPosition());
             }
 
@@ -129,7 +152,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
+
                 viewPager.setCurrentItem(tab.getPosition());
+
             }
         });
 
@@ -168,26 +193,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (!isLoggedIn) {
-
-                    MaterialDialog dialog = builder.build();
-                    dialog.show();
-                } else {
-
-                    view.getContext().startActivity(new Intent(MainActivity.this, AddPropertyActivity.class));
-
-                }
-//                    Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
-
-//            }
-
-            }
-        });
     }
 
 

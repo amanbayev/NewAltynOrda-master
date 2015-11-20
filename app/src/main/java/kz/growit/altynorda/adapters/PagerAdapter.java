@@ -1,17 +1,20 @@
 package kz.growit.altynorda.adapters;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import kz.growit.altynorda.MainActivity;
 
 /**
  * Created by jean on 9/17/2015.
  */
 public class PagerAdapter extends FragmentPagerAdapter {
-
     private final List<Fragment> mFragmentList = new ArrayList();
 
     private final List<String> mFragmentTitleNames = new ArrayList();

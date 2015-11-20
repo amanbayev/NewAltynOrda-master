@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.iconics.IconicsDrawable;
 
+import kz.growit.altynorda.MainActivity;
 import kz.growit.altynorda.R;
 
 /**
@@ -54,7 +56,7 @@ public class ListingsMapFragment extends Fragment {
                 map.moveCamera(CameraUpdateFactory
                         .newLatLngZoom(new LatLng(51.12638435, 71.43703759), 14));
 
-                map.getUiSettings().setZoomControlsEnabled(false);
+                map.getUiSettings().setZoomControlsEnabled(true);
                 map.getUiSettings().setCompassEnabled(true);
                 map.setMyLocationEnabled(true);
                 map.getUiSettings().setMapToolbarEnabled(true);
@@ -72,7 +74,7 @@ public class ListingsMapFragment extends Fragment {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 map.moveCamera(CameraUpdateFactory
-                        .newLatLngZoom(new LatLng(marker.getPosition().latitude, marker.getPosition().longitude - 1), 14));
+                        .newLatLng(new LatLng(marker.getPosition().latitude, marker.getPosition().longitude)));
                 return false;
             }
         });
@@ -84,11 +86,14 @@ public class ListingsMapFragment extends Fragment {
                 .title("Nursaya"));
         Drawable test = new IconicsDrawable(getActivity().getApplicationContext(), FontAwesome.Icon.faw_building)
                 .sizeDp(24)
-                .colorRes(R.color.colorAccent);
+                .colorRes(R.color.colorPrimaryDark);
+        Bitmap iconBM = drawableToBitmap(test);
         map.addMarker(new MarkerOptions()
                 .position(new LatLng(51.12802392, 71.42155051))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.apartment))
-                .title("Northern"));
+                .icon(BitmapDescriptorFactory.fromBitmap(iconBM))
+                        //.fromResource(R.drawable.apartment)
+                .title("Northern")
+        );
         map.addMarker(new MarkerOptions()
                 .position(new LatLng(51.13280427, 71.40276432))
                 .title("Han shatyr"));

@@ -3,6 +3,7 @@ package kz.growit.altynorda.fragments;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -82,7 +83,6 @@ public class ListingsListFragment extends Fragment {
         recyclerView = (RecyclerView) rootView.findViewById(R.id.myListingsRV);
         progressView = (ProgressView) rootView.findViewById(R.id.progressTListingsFragment);
 
-
       /*  //More Filters button to show a fragment with additional filters
         moreFiltersButton1 = (Button) fView.findViewById(R.id.moreFiltersButton1);
         moreFiltersButton1.setOnClickListener(new View.OnClickListener() {
@@ -147,6 +147,7 @@ public class ListingsListFragment extends Fragment {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        listings.clear();
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 Listings listing = new Listings(response.getJSONObject(i));
